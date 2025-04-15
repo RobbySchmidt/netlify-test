@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="product" class="p-4 max-w-3xl mx-auto space-y-6">
-      <div class="flex items-center justify-between">
+      <div class="md:flex items-center justify-between space-y-4 md:space-y-0">
         <button 
           @click="$router.back()"
           class="bg-prime rounded-md py-1.5 px-3 text-white hover:cursor-pointer hover:bg-prime-600 duration-200 ease-in-out flex items-center gap-2 group"
@@ -11,10 +11,10 @@
           <span>Back to Sortiment</span>
         </button>
         <div class="space-x-4">
-          <span class="bg-prime text-white rounded-md px-3 py-1.5">
+          <span class="bg-prime text-white rounded-md px-3 py-1.5 inline-block">
             {{ formatRating(product.rating.rate) }} rating
           </span>
-          <span class="bg-prime text-white rounded-md px-3 py-1.5">
+          <span class="bg-prime text-white rounded-md px-3 py-1.5 inline-block">
             {{ product.rating.count }} left
           </span>
         </div>
