@@ -7,9 +7,6 @@
 </template>
 
 <style>
-  body {
-    overflow-x: hidden;
-  }
   .page-enter-active,
   .page-leave-active {
     transition: all 0.2s;
