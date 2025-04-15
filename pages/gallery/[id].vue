@@ -1,6 +1,7 @@
 <template>
   <div class="container max-w-4xl px-8 py-8 xl:py-12 space-y-4">
     <UButton 
+      color="red"
       @click="$router.back()"
       class="inline-block cursor-pointer py-2 px-3 bg-green-500 text-white rounded-md duration-200 ease-in-out">
       Back to Gallery
