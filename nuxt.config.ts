@@ -1,34 +1,47 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import tailwindcss from '@tailwindcss/vite'
+
 export default defineNuxtConfig({
-  css: [    
-    '~/assets/fonts/fonts.css',
-    '~/assets/css/main.scss', 
+  css: ['~/assets/css/tailwind.css'],
+
+  vite: {
+    plugins: [
+      tailwindcss(),
     ],
+  },
+
+  modules: ['shadcn-nuxt', '@pinia/nuxt', 'nuxt-directus'],
 
   app: {
-  pageTransition: { name: 'page', mode: 'out-in' },
-  head: {
-    link: [{rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"}]
+    pageTransition: { name: 'page', mode: 'out-in' }
   },
-},
 
+  shadcn: {
+    prefix: '',
+    componentDir: './components/ui'
+  },
+
+  directus: {      
+    url: process.env.DIRECTUS_URL,
+    autoFetch: false,
+  },
+ 
+  runtimeConfig: {
+    public: {
+      directusUrl: process.env.DIRECTUS_URL,
+    },
+    
+    redirects: false,
+  },
+
+  // routeRules: {
+  //   '/api/**': {
+  //     proxy: {
+  //       to: 'https://directuscon.axtlust.de/**',
+  //     },
+  //   },
+  // },
+  
   devtools: { enabled: false },
-  extends: ['@nuxt/ui-pro'],
 
-  modules: [
-    '@pinia/nuxt',
-    '@vueuse/motion/nuxt',
-    '@nuxt/ui',
-    'nuxt-swiper',
-  ],
-
-  pinia: {
-    autoImports: ["defineStore"],
-  },
-
-  imports: {
-    dirs: [".stores"],
-  },
-
-  compatibilityDate: '2025-03-10',
+  compatibilityDate: '2025-04-10'
 })
