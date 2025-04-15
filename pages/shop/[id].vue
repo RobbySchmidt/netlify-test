@@ -10,7 +10,7 @@
             class="size-5 flex-none group-hover:-translate-x-1 duration-200 ease-in-out" />
           <span>Back to Sortiment</span>
         </button>
-        <div class="space-x-4">
+        <div class="space-x-3 md:space-x-4">
           <span class="bg-prime text-white rounded-md px-3 py-1.5 inline-block">
             {{ formatRating(product.rating.rate) }} rating
           </span>
