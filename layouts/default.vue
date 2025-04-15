@@ -4,7 +4,7 @@
         <shoppingCart />
       </div>
         
-      <div class="py-20">
+      <div class="py-12 md:py-20">
         <slot />
       </div> 
     </div>
