@@ -46,6 +46,20 @@
   --color-prime: var(--color-prime-500);
   --color-prime-500: #3c8067;
   --color-prime-600: #1b4133;
+
+  /* --text-xs: clamp(0.75rem, 1vw, 1rem);
+  --text-sm: clamp(0.875rem, 1.2vw, 1.125rem);
+  --text-base: clamp(1rem, 1.4vw, 1.5rem);
+  --text-md: clamp(1.25rem, 1.6vw, 2rem);
+  --text-lg: clamp(2rem, 2vw, 3.25rem);
+  --text-xl: clamp(2.5rem, 5vw, 4rem);
+
+  --spacing-xs: clamp(0.25rem, 1vw, 0.5rem);
+  --spacing-sm: clamp(0.5rem, 1.2vw, 1rem);
+  --spacing-base: clamp(0.75rem, 1.4vw, 1.5rem);
+  --spacing-md: clamp(1rem, 1.6vw, 2rem);
+  --spacing-lg: clamp(2rem, 2vw, 3rem);
+  --spacing-xl: clamp(3rem, 10vw, 5rem); */
 }
 
 :root {
