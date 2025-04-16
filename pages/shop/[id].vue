@@ -2,14 +2,14 @@
   <div>
     <div v-if="product" class="p-4 max-w-3xl mx-auto space-y-6">
       <div class="md:flex items-center justify-between space-y-4 md:space-y-0">
-        <button 
-          @click="$router.back()"
-          class="bg-prime rounded-md py-1.5 px-3 text-white hover:cursor-pointer hover:bg-prime-600 duration-200 ease-in-out flex items-center gap-2 group"
+        <NuxtLink 
+          to="/shop"
+          class="bg-prime rounded-md py-1.5 px-3 text-white hover:cursor-pointer hover:bg-prime-600 duration-200 ease-in-out flex items-center gap-2 group w-fit"
         >
           <MoveLeft
             class="size-5 flex-none group-hover:-translate-x-1 duration-200 ease-in-out" />
           <span>Back to Sortiment</span>
-        </button>
+        </NuxtLink>
         <div class="space-x-3 md:space-x-4">
           <span class="bg-prime text-white rounded-md px-3 py-1.5 inline-block">
             {{ formatRating(product.rating.rate) }} rating

@@ -1,11 +1,10 @@
 <template>
     <div>
-      <div class="flex justify-between items-center border-b border-prime">
-        <navigation />
+      <navigation /> 
+      <div class="fixed top-20 right-4 z-40">
         <shoppingCart />
       </div>
-        
-      <div class="py-12 md:py-20">
+      <div class="pt-16">
         <slot />
       </div> 
     </div>
