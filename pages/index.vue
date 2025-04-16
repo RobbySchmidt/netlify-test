@@ -1,7 +1,7 @@
 <template>
   <div class="p-4">
     <NuxtLink class="underline" to="/shop">Zum Shop</NuxtLink>
-    <pre>{{ orders }}</pre>
+    <pre>{{ orders }}</pre>s
   </div>
 </template>
 
