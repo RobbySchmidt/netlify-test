@@ -1,6 +1,7 @@
 <template>
     <div>
-      <div class="fixed right-4 top-4 z-50">
+      <div class="flex justify-between items-center border-b border-prime">
+        <navigation />
         <shoppingCart />
       </div>
         

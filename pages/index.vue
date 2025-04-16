@@ -1,21 +1,13 @@
 <template>
   <div class="p-4">
     <NuxtLink class="underline" to="/shop">Zum Shop</NuxtLink>
-    <pre>{{ orders }}</pre>s
   </div>
 </template>
 
-<script setup lang="ts">
-  const { $directus, $readItems } = useNuxtApp()
-
-  const { data: orders } = await useAsyncData('orders', () => {
-    return $directus.request(
-    $readItems('orders', {
-      fields: ['*'],
-    })
-    )
+<script setup>
+  definePageMeta({
+    middleware: 'redirect-to-shop'
   })
-
 </script>
 
 <style scoped>
