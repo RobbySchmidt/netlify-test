@@ -5,7 +5,8 @@ export const useStore = defineStore('store', {
     products: [],
     shoppingcart: [],
     selectedCategory: null,
-    orders: []
+    orders: [],
+    openMenu: false,
   }),
 
   getters: {

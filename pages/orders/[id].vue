@@ -1,13 +1,13 @@
 <template>
-  <div class="p-4 mx-auto max-w-3xl space-y-4">
-    <button 
-      @click="$router.back()"
-      class="bg-prime rounded-md py-1.5 px-3 text-white hover:cursor-pointer hover:bg-prime-600 duration-200 ease-in-out flex items-center gap-2 group"
+  <div class="p-4 mx-auto md:w-10/12 space-y-4">
+    <NuxtLink 
+      to="/orders"
+      class="bg-prime rounded-md py-1.5 px-3 text-white hover:cursor-pointer hover:bg-prime-600 duration-200 ease-in-out flex items-center gap-2 group w-fit"
     >
       <MoveLeft
         class="size-5 flex-none group-hover:-translate-x-1 duration-200 ease-in-out" />
       <span>Back to Orders</span>
-    </button>
+    </NuxtLink>
     
     <h2 class="text-xl text-prime">Customer Details</h2>
 
