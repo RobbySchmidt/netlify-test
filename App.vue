@@ -6,6 +6,12 @@
   </div>
 </template>
 
+<script setup>
+  import { useStore } from '/store/store.ts'
+  const store = useStore()
+  await store.fetchOrders()
+</script>
+
 <style>
   .page-enter-active,
   .page-leave-active {

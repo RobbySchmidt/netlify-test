@@ -5,6 +5,7 @@ export const useStore = defineStore('store', {
     products: [],
     shoppingcart: [],
     selectedCategory: null,
+    orders: []
   }),
 
   getters: {
@@ -20,7 +21,10 @@ export const useStore = defineStore('store', {
       return state.products.filter(
         (product) => product.category === state.selectedCategory
       );
-    }
+    },
+    getOrderById: (state) => {
+      return (id) => state.orders.find((order) => order.id === id);
+    },
   },
 
   actions: {
@@ -28,6 +32,21 @@ export const useStore = defineStore('store', {
       const response = await fetch("https://fakestoreapi.com/products");
       const data = await response.json();
       this.products = data;
+    },
+
+    async fetchOrders() {
+      const { $directus, $readItems } = useNuxtApp();
+      try {
+        const orders = await $directus.request(
+          $readItems('orders', {
+            fields: ['*'],
+            sort: ['-timestamp'],
+          })
+        );
+        this.orders = orders;
+      } catch (error) {
+        console.error('Error fetching orders:', error);
+      }
     },
     
     addToCart(cart) {
