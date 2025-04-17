@@ -18,6 +18,11 @@
       <li>Postal Code & City: {{ order.user_postal_code }} {{ order.user_city }}</li>
       <li>Total Price: {{ order.total }}€</li>
       <li>Payment Status: {{ order.status }}</li>
+      <li
+        :class="order.processed ? 'text-prime' : 'text-destructive'">
+        Process Status: 
+        {{ order.processed ? 'Order has been processed' : 'Order has not been processed yet' }}
+      </li>
     </ul>
     
     <h3 class="text-xl text-prime">Products in Order</h3>
@@ -34,12 +39,24 @@
         </div>
       </li>
     </ul>
+
+    <Button
+      @click="toggleProcessed"
+      :variant="order.processed ? 'destructive' : ''"
+    >
+      {{ order.processed ? 'Unmark as Processed' : 'Mark as Processed' }}
+    </Button>
   </div>
 </template>
 
 <script setup>
   import { MoveLeft } from 'lucide-vue-next';
   import { useStore } from '/store/store.ts'
+
+  definePageMeta({
+    middleware: 'auth',
+  });
+
   const store = useStore()
 
   const { params } = useRoute()
@@ -56,6 +73,11 @@
       return [];
     }
   })
+
+  const toggleProcessed = async () => {
+    const newValue = !order.value.processed;
+    await store.updateOrderProcessed(params.id, newValue);
+  };
 </script>
 
 <style scoped>
