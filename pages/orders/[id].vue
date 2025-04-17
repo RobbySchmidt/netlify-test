@@ -1,5 +1,5 @@
 <template>
-  <div class="p-4 mx-auto md:w-10/12 space-y-4">
+  <div class="p-4 mx-auto md:w-10/12 space-y-6">
     <NuxtLink 
       to="/orders"
       class="bg-prime rounded-md py-1.5 px-3 text-white md:hover:cursor-pointer md:hover:bg-prime-600 duration-200 ease-in-out flex items-center gap-2 group w-fit"
@@ -25,7 +25,7 @@
       </ul>
     </div>
 
-    <div class="bg-white shadow-lg rounded-lg p-6 space-y-4">
+    <div class="bg-white shadow-lg rounded-lg p-4 space-y-6">
       <h3 class="text-xl text-prime font-semibold">Products in Order</h3>
       <ul class="space-y-4">
         <li v-for="(item, index) in parsedItems" :key="index" class="flex items-center space-x-4">
