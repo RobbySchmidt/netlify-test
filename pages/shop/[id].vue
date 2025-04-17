@@ -4,7 +4,7 @@
       <div class="md:flex items-center justify-between space-y-4 md:space-y-0">
         <NuxtLink 
           to="/shop"
-          class="bg-prime rounded-md py-1.5 px-3 text-white hover:cursor-pointer hover:bg-prime-600 duration-200 ease-in-out flex items-center gap-2 group w-fit"
+          class="bg-prime rounded-md py-1.5 px-3 text-white md:hover:cursor-pointer md:hover:bg-prime-600 duration-200 ease-in-out flex items-center gap-2 group w-fit"
         >
           <MoveLeft
             class="size-5 flex-none group-hover:-translate-x-1 duration-200 ease-in-out" />
@@ -34,7 +34,7 @@
               {{ formatPrice(product.price) }}€
             </span>
           </div>
-          <button @click="addToCart" class="bg-prime w-full flex items-center justify-center gap-4 text-[#ffffff] py-2 rounded-md hover:cursor-pointer hover:bg-prime-600 duration-200 ease-in-out">
+          <button @click="addToCart" class="bg-prime w-full flex items-center justify-center gap-4 text-[#ffffff] py-2 rounded-md md:hover:cursor-pointer md:hover:bg-prime-600 duration-200 ease-in-out">
             <img class="block" src="/images/icon-cart.svg" alt=""/>
             <span>Add to Cart</span>
           </button>
