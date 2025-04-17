@@ -9,7 +9,7 @@ export default defineNuxtConfig({
     ],
   },
 
-  modules: ['shadcn-nuxt', '@pinia/nuxt', 'nuxt-directus'],
+  modules: ['shadcn-nuxt', '@pinia/nuxt', 'nuxt-directus', 'nuxt-highcharts'],
 
   app: {
     pageTransition: { name: 'page', mode: 'out-in' }

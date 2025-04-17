@@ -45,7 +45,10 @@
     ];
 
     if (user.value) {
-      items.push({ href: '/orders', label: 'Orders' });
+      items.push(
+        { href: '/orders', label: 'Orders' },
+        { href: '/sales', label: 'Sales' }
+      );
     }
 
     return items;

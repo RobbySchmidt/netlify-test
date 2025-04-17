@@ -8,42 +8,42 @@
         class="size-5 flex-none group-hover:-translate-x-1 duration-200 ease-in-out" />
       <span>Back to Orders</span>
     </NuxtLink>
-    
-    <h2 class="text-xl text-prime">Customer Details</h2>
 
-    <ul>
-      <li>Name: {{ order.user_name }}</li>
-      <li>Payment ID: {{ order.payment_id }}</li>
-      <li>Address: {{ order.user_address }}</li>
-      <li>Postal Code & City: {{ order.user_postal_code }} {{ order.user_city }}</li>
-      <li>Total Price: {{ order.total }}€</li>
-      <li>Payment Status: {{ order.status }}</li>
-      <li
-        :class="order.processed ? 'text-prime' : 'text-destructive'">
-        Process Status: 
-        {{ order.processed ? 'Order has been processed' : 'Order has not been processed yet' }}
-      </li>
-    </ul>
-    
-    <h3 class="text-xl text-prime">Products in Order</h3>
-    
-    <ul class="space-y-4">
-      <li v-for="(item, index) in parsedItems" :key="index">
-        <div>
-          <img :src="item.image" alt="item image" class="w-24 h-24 object-contain"/>
-        </div>
-        <div>
-          <span>{{ item.title }}</span><br>
-          <span>Price: {{ item.price }}€</span><br>
-          <span>Quantity: {{ item.quantity }}</span>
-        </div>
-      </li>
-    </ul>
+    <div class="bg-white shadow-lg rounded-lg p-4 space-y-6">
+      <h2 class="text-2xl text-prime font-bold">Customer Details</h2>
+      <ul class="space-y-2 text-gray-700">
+        <li><strong>Name:</strong> {{ order.user_name }}</li>
+        <li><strong>Payment ID:</strong> {{ order.payment_id }}</li>
+        <li><strong>Address:</strong> {{ order.user_address }}</li>
+        <li><strong>Postal Code & City:</strong> {{ order.user_postal_code }} {{ order.user_city }}</li>
+        <li><strong>Total Price:</strong> {{ order.total }}€</li>
+        <li><strong>Payment Status:</strong> {{ order.status }}</li>
+        <li :class="order.processed ? 'text-prime' : 'text-destructive'">
+          <strong>Process Status:</strong> 
+          {{ order.processed ? 'Order has been processed' : 'Order has not been processed yet' }}
+        </li>
+      </ul>
+    </div>
+
+    <div class="bg-white shadow-lg rounded-lg p-6 space-y-4">
+      <h3 class="text-xl text-prime font-semibold">Products in Order</h3>
+      <ul class="space-y-4">
+        <li v-for="(item, index) in parsedItems" :key="index" class="flex items-center space-x-4">
+          <img :src="item.image" alt="item image" class="w-24 h-24 object-contain flex-none" />
+          <div class="space-y-1">
+            <span class="text-lg font-semibold">{{ item.title }}</span>
+            <div class="text-sm text-gray-600">
+              <span>Price: {{ formatPrice(item.price) }}€</span><br />
+              <span>Quantity: {{ item.quantity }}</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
 
     <Button
       @click="toggleProcessed"
-      :variant="order.processed ? 'destructive' : 'default'"
-    >
+      :variant="order.processed ? 'destructive' : 'default'">
       {{ order.processed ? 'Unmark as Processed' : 'Mark as Processed' }}
     </Button>
   </div>
@@ -54,7 +54,7 @@
   import { useStore } from '/store/store.ts'
 
   definePageMeta({
-    middleware: 'auth',
+    middleware: 'auth'
   });
 
   const store = useStore()
@@ -79,7 +79,3 @@
     await store.updateOrderProcessed(params.id, newValue);
   };
 </script>
-
-<style scoped>
-/* Add your custom styles here */
-</style>
