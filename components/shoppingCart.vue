@@ -47,19 +47,20 @@
 
           <div v-if="store.shoppingcart.length > 0" class="space-x-4">
             <SheetClose as-child>
-              <NuxtLink
-                to="/checkout"
-                class="bg-prime text-white py-2 px-4 rounded-md md:hover:bg-prime-600 duration-200 ease-in-out cursor-pointer"
-              >
-                Buy now
-              </NuxtLink>
+              <Button as-child>
+                <NuxtLink
+                  to="/checkout"
+                >
+                  Buy now
+                </NuxtLink>
+              </Button>
             </SheetClose>
             <SheetClose as-child>
-              <button 
-                @click="store.emptyCart" 
-                class="bg-red-500 text-white py-2 px-4 rounded-md md:hover:bg-red-600 duration-200 ease-in-out cursor-pointer">
+              <Button 
+                variant="destructive"
+                @click="store.emptyCart">
                 Empty Cart
-              </button>
+              </Button>
             </SheetClose>
           </div>
       </SheetContent>

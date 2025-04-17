@@ -8,6 +8,11 @@
           :to="`/orders/${order.id}`">
           <span>{{ order.payment_id }}</span>
           <span>{{ formatTimestamp(order.timestamp) }}</span>
+          <span 
+            v-if="order.processed"
+            class="text-prime">
+            <Check />
+          </span>
         </NuxtLink>
       </li>
     </ul>
@@ -15,6 +20,7 @@
 </template>
 
 <script setup>
+  import { Check } from 'lucide-vue-next';
   import { useStore } from '/store/store.ts'
   const { orders } = useStore()
   definePageMeta({

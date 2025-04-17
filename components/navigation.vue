@@ -14,7 +14,7 @@
           <X v-else/>
         </span>
         <ul 
-          class="absolute top-[56px] right-0 h-screen bg-white w-full md:w-fit transition-transform duration-200 ease-in-out transform md:static md:translate-x-0 md:flex md:h-auto text-center"
+          class="absolute top-[56px] right-0 h-screen bg-white w-full md:w-fit transition-transform duration-200 ease-in-out transform md:static md:translate-x-0 md:flex md:h-auto text-center border-t md:border-none"
           :class="{ 'translate-x-0': store.openMenu, 'translate-x-full': !store.openMenu }">
           <li v-for="link in navigationItems">
             <NuxtLink 

@@ -87,6 +87,24 @@ export const useStore = defineStore('store', {
 
     emptyCart() {
       this.shoppingcart = [];
-    }
+    },
+
+    async updateOrderProcessed(orderId, value) {
+      const { $directus, $updateItem } = useNuxtApp();
+      try {
+        await $directus.request(
+          $updateItem('orders', orderId, {
+            processed: value,
+          })
+        );
+    
+        const order = this.orders.find(o => o.id === orderId);
+        if (order) {
+          order.processed = value;
+        }
+      } catch (error) {
+        console.error('Error updating processed status:', error);
+      }
+    }    
   }
 });
