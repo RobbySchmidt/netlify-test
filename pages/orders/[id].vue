@@ -42,7 +42,7 @@
 
     <Button
       @click="toggleProcessed"
-      :variant="order.processed ? 'destructive' : ''"
+      :variant="order.processed ? 'destructive' : 'default'"
     >
       {{ order.processed ? 'Unmark as Processed' : 'Mark as Processed' }}
     </Button>
