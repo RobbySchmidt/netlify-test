@@ -47,7 +47,7 @@
   import { useStore } from '/store/store.ts'
   const { orders } = useStore()
   definePageMeta({
-    middleware: 'auth',
+    middleware: 'auth'
   });
 </script>
 
