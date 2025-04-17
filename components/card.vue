@@ -17,7 +17,10 @@
 <script setup>
   defineProps({
     image: String,
-    price: String,
+    price: {
+      type: [String, Number],
+      required: true
+    },
     title: String,
     category: String
   })
