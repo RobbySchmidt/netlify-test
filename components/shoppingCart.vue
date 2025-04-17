@@ -4,7 +4,7 @@
       <SheetTrigger as-child>
         <Button
           variant="primary"
-          class="bg-prime cursor-pointer rounded-full p-3 text-white hover:bg-prime-600 duration-200 ease-in-out flex items-center justify-center gap-2">
+          class="bg-prime cursor-pointer rounded-full p-3 text-white md:hover:bg-prime-600 duration-200 ease-in-out flex items-center justify-center gap-2">
           <img class="w-6 h-6" src="/images/icon-cart.svg" alt="Cart Icon">
           <span>{{ totalItemsInCart }}</span>
         </Button>
@@ -49,7 +49,7 @@
             <SheetClose as-child>
               <NuxtLink
                 to="/checkout"
-                class="bg-prime text-white py-2 px-4 rounded-md hover:bg-prime-600 duration-200 ease-in-out cursor-pointer"
+                class="bg-prime text-white py-2 px-4 rounded-md md:hover:bg-prime-600 duration-200 ease-in-out cursor-pointer"
               >
                 Buy now
               </NuxtLink>
@@ -57,7 +57,7 @@
             <SheetClose as-child>
               <button 
                 @click="store.emptyCart" 
-                class="bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 duration-200 ease-in-out cursor-pointer">
+                class="bg-red-500 text-white py-2 px-4 rounded-md md:hover:bg-red-600 duration-200 ease-in-out cursor-pointer">
                 Empty Cart
               </button>
             </SheetClose>
@@ -69,7 +69,7 @@
 </template>
 
 <script setup>
-  import { X, CircleX, Minus, Plus } from 'lucide-vue-next';
+  import { CircleX, Minus, Plus } from 'lucide-vue-next';
   import { useStore } from '/store/store.ts'
   const store = useStore()
 

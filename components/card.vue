@@ -1,5 +1,5 @@
 <template>
-  <div class="relative rounded-md overflow-hidden text-center shadow-md md:hover:scale-105 duration-200 ease-in-out">
+  <div class="relative rounded-md overflow-hidden text-center shadow-md md:md:hover:scale-105 duration-200 ease-in-out">
     <div class="grid grid-cols-2 gap-4 items-center p-4">
       <img class="block w-56 h-56 object-contain" 
         :src="image" alt="">

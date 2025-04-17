@@ -4,7 +4,7 @@
     <p>Your order was successful.</p>
     <NuxtLink
       to="/shop"
-      class="bg-prime text-white inline-block mt-4 py-2 px-4 rounded-md hover:bg-prime-600 duration-200 ease-in-out cursor-pointer"
+      class="bg-prime text-white inline-block mt-4 py-2 px-4 rounded-md md:hover:bg-prime-600 duration-200 ease-in-out cursor-pointer"
     >
       Go back to Shop
     </NuxtLink>
