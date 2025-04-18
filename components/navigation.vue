@@ -5,7 +5,7 @@
         <NuxtLink 
           to="/shop" 
           class="text-white bg-prime md:hover:bg-prime-600 duration-200 ease-in-out py-4 px-6">
-          <Earth />
+          <img class="block w-6 h-6 filter invert brightness-0" src="/images/flamme.svg" alt="">
         </NuxtLink>
         <span 
           @click="store.openMenu = !store.openMenu" 
@@ -31,7 +31,7 @@
 </template>
 
 <script setup>
-  import { Earth, Menu, X } from 'lucide-vue-next';
+  import { Menu, X } from 'lucide-vue-next';
   import { useStore } from '/store/store';
 
   const store = useStore()
