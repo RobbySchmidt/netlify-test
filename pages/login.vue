@@ -71,28 +71,40 @@
 
   const onSubmit = handleSubmit(async () => {
   try {
-    // Check if it's the hardcoded admin
     if (email.value === 'admin@shop.com' && password.value === 'test123') {
-      // Manually set the user
       const { setUser } = useDirectusAuth();
       setUser({
         email: 'admin@shop.com',
         first_name: 'Admin',
         role: 'admin',
       });
-      return navigateTo('/');
+
+      // Redirect to orders page for admin
+      return navigateTo('/orders');
     }
 
-    // Otherwise try normal Directus login
+    // Try normal Directus login
     await login({ email: email.value, password: password.value });
-    navigateTo('/');
-  } catch (e) {
-    errorMessage.value = 'Email Adresse oder Passwort ist nicht korrekt';
-    setTimeout(() => {
-      errorMessage.value = '';
-    }, 3000);
-  }
-});
+
+    // Fetch user to get info like email/role
+    const { fetchUser } = useDirectusAuth();
+    const user = await fetchUser();
+
+    // Redirect based on user email or role
+    if (user?.email === 'admin@shop.com') {
+      return navigateTo('/orders');
+    }
+
+    // Normal user
+    return navigateTo('/shop');
+    } catch (e) {
+      errorMessage.value = 'Email Adresse oder Passwort ist nicht korrekt';
+      setTimeout(() => {
+        errorMessage.value = '';
+      }, 3000);
+    }
+  });
+
 
 
 </script>
