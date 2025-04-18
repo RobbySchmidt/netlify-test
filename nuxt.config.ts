@@ -21,13 +21,13 @@ export default defineNuxtConfig({
   },
 
   directus: {      
-    url: process.env.DIRECTUS_URL,
+    url: "https://directuscon.axtlust.de",
     autoFetch: false,
   },
  
   runtimeConfig: {
     public: {
-      directusUrl: process.env.DIRECTUS_URL,
+      directusUrl: "https://directuscon.axtlust.de",
     },
     
     redirects: false,
