@@ -74,6 +74,8 @@ const saveOrder = async (paypalDetails) => {
     const responseData = await response.json()
     console.log('✅ Order saved:', responseData)
 
+    await store.fetchOrders()
+
   } catch (err) {
     console.error('❌ Error saving order to Directus:', err)
   }

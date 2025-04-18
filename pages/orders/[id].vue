@@ -1,5 +1,5 @@
 <template>
-  <div class="p-4 mx-auto md:w-10/12 space-y-6">
+  <div class="p-4 mx-auto md:w-8/12 space-y-6">
     <NuxtLink 
       to="/orders"
       class="bg-prime rounded-md py-1.5 px-3 text-white md:hover:cursor-pointer md:hover:bg-prime-600 duration-200 ease-in-out flex items-center gap-2 group w-fit"

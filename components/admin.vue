@@ -11,19 +11,24 @@
 
 <script setup>
 
-const { logout } = useDirectusAuth();
-
+const { logout, setUser } = useDirectusAuth();
 const user = useDirectusUser();
 
 const isAuthenticated = computed(() => !!user.value);
 
-
 const handleAuthAction = async () => {
   if (user.value) {
-    await logout();
+    // If it's the hardcoded admin, clear manually
+    if (user.value.email === 'admin@shop.com') {
+      setUser(null); // manually clear user
+    } else {
+      await logout(); // Directus logout
+    }
+
     await navigateTo('/login');
   } else {
     await navigateTo('/login');
   }
 };
+
 </script>
