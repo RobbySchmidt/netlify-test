@@ -6,11 +6,7 @@
         v-for="product in store.filteredProducts" 
         :key="product.id"
         :to="`/shop/${product.id}`">
-        <card 
-          :image="product.image" 
-          :price="product.price" 
-          :title="product.title"
-          :category="product.category"/>
+        <card :product="product" />
       </NuxtLink>
     </div>
   </div>
